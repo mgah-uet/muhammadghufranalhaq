@@ -79,7 +79,7 @@ export function ExperienceTimeline() {
           <span className="mono-label block mb-4" style={{ color: "var(--copper)" }}>
             03 / EXPERIENCE
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Career Timeline</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Career Timeline</h2>
           <p className="text-lg md:text-xl" style={{ color: "var(--paper-muted)", maxWidth: "600px" }}>
             My professional journey across Kuwait and Saudi Arabia, detailed in a clean vertical flow.
           </p>
@@ -105,12 +105,12 @@ export function ExperienceTimeline() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="relative flex gap-6 md:gap-10 group"
+                  className="relative flex gap-4 md:gap-10 group"
                 >
                   {/* Left Icon Node */}
                   <div className="relative z-10 flex flex-col items-center shrink-0">
                     <div
-                      className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full border-2 transition-all duration-300 group-hover:scale-110 bg-[var(--bg-panel)]"
+                      className="w-12 h-12 md:w-20 md:h-20 flex items-center justify-center rounded-full border-2 transition-all duration-300 group-hover:scale-110 bg-[var(--bg-panel)]"
                       style={{
                         borderColor: isActive ? "var(--copper)" : "var(--line-grid)",
                         backgroundColor: isActive ? "rgba(255,94,0,0.12)" : "rgba(17, 17, 17, 0.4)",
@@ -123,7 +123,7 @@ export function ExperienceTimeline() {
 
                   {/* Right Content Card */}
                   <div
-                    className="flex-1 p-8 md:p-10 rounded-2xl border border-[rgba(255,255,255,0.05)] transition-all duration-300 hover:border-[var(--copper)] hover:shadow-[0_0_20px_rgba(255,94,0,0.15)] backdrop-blur-md"
+                    className="flex-1 min-w-0 p-5 md:p-10 rounded-2xl border border-[rgba(255,255,255,0.05)] transition-all duration-300 hover:border-[var(--copper)] hover:shadow-[0_0_20px_rgba(255,94,0,0.15)] backdrop-blur-md"
                     style={{
                       backgroundColor: "rgba(17, 17, 17, 0.4)",
                       boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
@@ -140,7 +140,7 @@ export function ExperienceTimeline() {
                         >
                           {entry.role}
                         </p>
-                        <h3 className="text-2xl font-bold mb-2" style={{ color: "var(--paper)" }}>
+                        <h3 className="text-xl md:text-2xl font-bold mb-2" style={{ color: "var(--paper)" }}>
                           {entry.company}
                         </h3>
                       </div>
@@ -222,11 +222,11 @@ export function ExperienceTimeline() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5 }}
-              className="relative flex gap-6 md:gap-10 group mt-8"
+              className="relative flex gap-4 md:gap-10 group mt-8"
             >
               <div className="relative z-10 flex flex-col items-center shrink-0">
                 <div
-                  className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full border-2 transition-all duration-300 group-hover:scale-110"
+                  className="w-12 h-12 md:w-20 md:h-20 flex items-center justify-center rounded-full border-2 transition-all duration-300 group-hover:scale-110"
                   style={{
                     borderColor: "var(--line-grid)",
                     backgroundColor: "rgba(17, 17, 17, 0.4)",
@@ -237,12 +237,12 @@ export function ExperienceTimeline() {
               </div>
               
               <div
-                className="flex-1 p-8 md:p-10 rounded-2xl border border-[rgba(255,255,255,0.05)] backdrop-blur-md"
+                className="flex-1 min-w-0 p-5 md:p-10 rounded-2xl border border-[rgba(255,255,255,0.05)] backdrop-blur-md"
                 style={{
                   backgroundColor: "rgba(17, 17, 17, 0.4)",
                 }}
               >
-                <h3 className="text-2xl font-bold mb-8" style={{ color: "var(--paper)" }}>
+                <h3 className="text-xl md:text-2xl font-bold mb-8" style={{ color: "var(--paper)" }}>
                   Internships & Foundations
                 </h3>
                 
