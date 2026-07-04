@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { SectionWrapper, FadeItem } from "@/components/ui/SectionWrapper";
+import { ImageModal } from "@/components/ui/ImageModal";
 import { designProjects, flagshipProjects } from "@/data/projects";
 
 type Tab = "design" | "site";
@@ -130,15 +131,13 @@ export function Projects() {
                     className="relative h-48 lg:h-auto min-h-[200px]"
                     style={{ backgroundColor: "var(--bg-blueprint)" }}
                   >
-                    <Image
+                    <ImageModal
                       src={project.image}
                       alt={project.name}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 100vw, 280px"
+                      thumbnailClassName="absolute inset-0 w-full h-full border-none"
                     />
                     <div
-                      className="absolute inset-0"
+                      className="absolute inset-0 pointer-events-none"
                       style={{
                         background:
                           "linear-gradient(to right, transparent 60%, rgba(17,17,17,0.4))",
