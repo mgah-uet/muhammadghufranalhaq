@@ -1,26 +1,106 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* ─── CSS Custom Properties (for style="" props and var() in JSX) ─── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-blueprint:   #050505;
+  --bg-panel:       #111111;
+  --line-grid:      #222222;
+  --copper:         #FF5E00;
+  --copper-bright:  #FF8800;
+  --signal-green:   #3ADB8F;
+  --paper:          #F8F9FA;
+  --paper-muted:    #8892B0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ─── Base Reset ─────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-blueprint);
+  color: var(--paper);
+  font-family: var(--font-inter, Inter, system-ui, sans-serif);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* ─── Minimal Top Glow Background ──────────────────────────────── */
+.top-glow-bg {
+  position: absolute; /* Not fixed, so it scrolls away leaving a flat dark background below */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120vh; /* Covers the hero area */
+  background-color: var(--bg-blueprint); /* Flat dark background */
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(201, 122, 61, 0.08) 0%, transparent 60%);
+  z-index: 0;
+  pointer-events: none;
+}
+/* Ensure the body has the flat dark background for the rest of the page */
+body {
+  background-color: var(--bg-blueprint);
+}
+
+/* ─── Typography Scale ───────────────────────────────────────── */
+h1, h2, h3 {
+  font-family: var(--font-space-grotesk, "Space Grotesk", system-ui, sans-serif);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--paper);
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem);   font-weight: 700; }
+h2 { font-size: clamp(1.75rem, 4vw, 2.75rem);  font-weight: 600; }
+h3 { font-size: clamp(1.1rem, 2vw, 1.35rem);   font-weight: 600; }
+
+.mono-label {
+  font-family: var(--font-ibm-plex-mono, "IBM Plex Mono", monospace);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--paper-muted);
+}
+
+/* ─── Focus Styles ─────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--copper);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-blueprint); }
+::-webkit-scrollbar-thumb { background: var(--line-grid); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--copper); }
+
+/* ─── Selection ─────────────────────────────────────────────── */
+::selection {
+  background: var(--copper);
+  color: var(--bg-blueprint);
+}
+
+/* ─── Reduced Motion ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
 }

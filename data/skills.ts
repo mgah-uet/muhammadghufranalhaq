@@ -1,0 +1,31 @@
+export const skills = {
+  software: [
+    { name: "ETAP", level: 9 },
+    { name: "Revit MEP", level: 8 },
+    { name: "AutoCAD", level: 9 },
+    { name: "DIALux Evo", level: 8 },
+    { name: "Primavera P6", level: 7 },
+    { name: "Microsoft Office", level: 9 },
+    { name: "MATLAB", level: 6 },
+    { name: "C++", level: 5 },
+    { name: "Adobe Photoshop", level: 6 },
+    { name: "Adobe Illustrator", level: 6 },
+  ],
+  competencies: [
+    "Single-line diagram (SLD) preparation",
+    "Load schedules, technical specs & BOQ",
+    "Cable sizing & cable tray calculations",
+    "Busbar, earthing & capacitor bank calculations",
+    "Load flow, voltage drop & short-circuit analysis",
+    "Lighting & emergency lighting design",
+    "Tendering, RFQs & cost estimation",
+    "Substation / generator / UPS preventive maintenance",
+  ],
+  soft: [
+    "Team leadership",
+    "Cross-discipline coordination",
+    "Client & consultant liaison",
+    "Technical reporting",
+  ],
+  languages: ["English", "Arabic", "Urdu", "Punjabi"],
+};
