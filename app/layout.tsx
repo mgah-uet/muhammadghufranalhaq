@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import ParticleBackground from "@/components/ParticleBackground";
+import { Analytics } from "@vercel/analytics/react";
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
@@ -68,12 +69,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${inter.variable} ${ibmPlexMono.variable} h-full`}
+      className={`${spaceGrotesk.variable} ${inter.variable} ${ibmPlexMono.variable} h-full overflow-x-hidden`}
     >
-      <body className="antialiased relative">
+      <body className="antialiased relative overflow-x-hidden">
         <ParticleBackground />
         <div className="top-glow-bg" />
         <div className="relative z-10">{children}</div>
+        <Analytics />
       </body>
     </html>
   );
