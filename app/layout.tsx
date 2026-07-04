@@ -71,10 +71,12 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${inter.variable} ${ibmPlexMono.variable} h-full overflow-x-hidden`}
     >
-      <body className="antialiased relative overflow-x-hidden">
+      <body className="antialiased relative overflow-x-hidden w-full max-w-[100vw]">
         <ParticleBackground />
         <div className="top-glow-bg" />
-        <div className="relative z-10">{children}</div>
+        <div className="relative z-10 w-full max-w-[100vw] overflow-x-hidden flex flex-col min-h-screen">
+          {children}
+        </div>
         <Analytics />
       </body>
     </html>

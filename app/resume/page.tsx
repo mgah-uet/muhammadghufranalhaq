@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Résumé — Muhammad Ghufran | Senior Electrical Engineer",
   description:
-    "Download or view the résumé of Muhammad Ghufran, Senior Electrical Engineer with 10+ years of experience in Kuwait and the GCC.",
+    "Download or view the résumé of Muhammad Ghufran, Senior Electrical Engineer with 11+ years of experience in Kuwait and the GCC.",
 };
 
 export default function ResumePage() {
